@@ -111,8 +111,7 @@ programs.waybar.enable = true; # top bar
 	qbittorrent
 	librewolf
 	pkgs.ktailctl
-	tealdeer
-	ghostty
+	tealdeer	
 	ncdu
 	pkgs.prismlauncher
 	htop
