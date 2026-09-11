@@ -145,6 +145,7 @@ programs.waybar.enable = true; # top bar
      mako
      swayidle
     keepassxc
+       pkgs.xwayland-satellite
   ];
 
   # 3. Optimization: Prevent systemd from waiting for network online
