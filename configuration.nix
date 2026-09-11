@@ -116,6 +116,7 @@ programs.waybar.enable = true; # top bar
 	pkgs.prismlauncher
 	htop
 	bat
+	ns-usbloader
     ];
   };
 
