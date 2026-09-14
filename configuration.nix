@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./gnome.nix
+      ./niri.nix
+      ./luks.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -16,8 +19,6 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-   boot.initrd.luks.devices."luks-2fc53874-8b13-4e3c-82fb-c367815823fb".device = "/dev/disk/by-uuid/2fc53874-8b13-4e3c-82fb-c367815823fb";
  
  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -48,19 +49,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  
-  #Enable the Niri Window Manager
-  programs.niri.enable = true;
-  systemd.user.services.niri.enableDefaultPath = false;
-  security.polkit.enable = true; # polkit
-services.gnome.gnome-keyring.enable = true; # secret service
-security.pam.services.swaylock = {};
-
-programs.waybar.enable = true; # top bar
 
 
  # Configure keymap in X11
